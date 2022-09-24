@@ -1,0 +1,26 @@
+{
+  "name": "dec-enc-lib",
+  "version": "1.0.5",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npx --node-options=--experimental-vm-modules jest || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ma226hn/L1-610.git"
+  },
+  "keywords": [],
+  "author": "Manar Alibrahim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ma226hn/L1-610/issues"
+  },
+  "homepage": "https://github.com/ma226hn/L1-610#readme",
+  "dependencies": {
+    "jest": "^29.0.3"
+    
+  }
+}
