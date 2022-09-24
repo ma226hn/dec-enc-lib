@@ -46,7 +46,7 @@ denna modul har två functioner
 - ObjectEncryption: Denna enhet tar (objekt) som ett argument och använder (json .stringfy) för att konvertera det till text och använder sedan (Encryption -module) för att hämta krypterad text.
 - objectDecryption :Denna enhet tar (krypterad text ) som ett argument och använder (decryption -module) för att hämta ursprungliga karaktärer och använder sedan (Json.parse) för ätt konvertera det till (object).
 
-![Alt text](images/diagram.PNG "diagram")
+![diagram](image/diagram.PNG "diagram")
 
 
 ### Testfall
