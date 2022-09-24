@@ -1,6 +1,6 @@
 {
   "name": "dec-enc-lib",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ma226hn/L1-610.git"
+    "url": "https://github.com/ma226hn/dec-enc-lib.git"
   },
   "keywords": [],
   "author": "Manar Alibrahim",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ma226hn/L1-610/issues"
+    "url": "https://github.com/ma226hn/dec-enc-lib/issues"
   },
-  "homepage": "https://github.com/ma226hn/L1-610#readme",
+  "homepage": "https://github.com/ma226hn/dec-enc-lib#readme",
   "dependencies": {
     "jest": "^29.0.3"
     

@@ -3,10 +3,9 @@
 Node.js dec-enc-lib library<br/>
 
 * Pure JavaScript
-* No needed OpenSSL
 * Encryption and decryption string
-* Encryption and decryption string
-* Provides additional encryption with  a user-entered password encryption with password 
+* Encryption and decryption object
+* Provides additional encryption with  a user-entered password . 
 
 
 

@@ -90,7 +90,7 @@ Beskriv hur du kommit fram till om din kod fungerar.
  - Denna modul tar en text som ett argument och ändrar karaktärer till andra karaktärer enligt ersättningsmatrisen och unicode table
 #### Decryption 
 Denna modul tar en krypterad text som ett argument och ändrar karaktärer till ursprungliga karaktärer enligt ersättningsmatrisen och unicode table
-#### PassEncryption
+#### PassEncDec
 denna modul har två functioner 
 - ExtraEncryption: Den tar text som ett argument och använder Encception-modulen för att ändra karaktärer till andra karaktärerenligt ersättningsmatrisen och Unicode-tabellen. Lägg till extra slumpmässiga karaktärer enligt lösenord
 - ExtraDecryption : Denna modul tar en krypterad text som ett argument och tar bort alla slumpmässiga tecken enligt lösenordet och ändrar sedan karaktärer till de ursprungliga karaktärer genom avkodaren
@@ -132,13 +132,25 @@ npm test
 
 | Namn och förklaring  | Reflektion                                   |
 | -------------------  | ---------------------------------------------|
-|                      |                                              |
+|          **Decryption** - **Encryption**      the name of the modules        |  they are perfect  **class name should have a noun or noun phrase names**  - **use Intention revealing names** |
+| **passEncDec** |The name is not the best and does not match the rule **use pronounceable names**|
+| **objectAlgorathem **  | I made a mistake when I chose this name because it doesn't follow the rules **Use intention revealing names**|
+|**mixmessage** the name of method in encryption module | Name is appropriate and  it follow the rules **use Intention revealing names** - **method name should have a verb or verb phrase names**  |
+|**CodingMatrix** the name of the array which used to replace the characters in the message | the name follow the rules **Avoid disinformaion names** - **add meaningful context** | 
+|**shuffelMatrix**  function  used in decryption and encryption modules | the name follow the rules **use Intention revealing names** - **method name should have a verb or verb phrase names** 
+
 
 ### Funktioner
 
 | Metodnamn och förklaring  | Reflektion                                   |
 | -------------------  | ---------------------------------------------|
-|                      |                                              |
-
+|       shuffelMatrix /Encryption module              |       **small**  10 line code  -- **mondic function** there is just one argument -- **Do one thing** it shuffle the array  - **have no side effect** becuse it shffle the copy of the orginal array- but it dose not follow the rule **Do not repeat your self** because i write it  in decryption  module and in Encryption module |                                        |
+|converToHex /encryption module  | ** use descriptive names** - **mondic function** -- **do one thing** |
+| countStringValue / used in encryption and passEncDec module  | it dose not follow the rule **Do not repeat your self** because i write it  in Encryption  module and in passEncDec module -   ** small**  8 line code  |
+| Decryption  function in Decryption module |  **mondic function** there is just one argument  - **prefer Exptions to returning Error code** |
+| Encryption function in Encryption module | **mondic function** there is just one argument  - **prefer Exptions to returning Error code** - **use descriptive names** |
+|divideMessage /in Decryption module  |  **mondic function** - **use descriptive names** - **do one thing** it divide the message | 
 ## Laborationsreflektion
 Reflektera över uppgiften utifrån ett kodkvalitetsperspektiv. Använd begrepp ifrån boken. 
+
+
