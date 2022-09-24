@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dec-enc-lib": "^1.0.4"
+    "dec-enc-lib": "^1.0.6"
   }
 }

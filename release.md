@@ -25,9 +25,63 @@ Förtydligande: Examinator kommer sätta betyg oberoende på vad ni anser.
 
 ## Återanvändning
 Beskriv hur du anpassat din kod och instruktioner för att någon annan programmerare skall kunna använda din modul. Om du skrivit instruktioner för din användare, länka till dessa. Om inte, beskriv här hur någon skall göra för att använda din modul.
-- jag har beskrivt allt om återanvändning  i readme file 
-<a href="README.md">README<a>
+  
+### Installing
 
+```shell
+npm i dec-enc-lib
+```
+### Decryption and Encryption string
+
+
+#### Example
+
+```javascript
+// For string
+import { Encryption} from 'dec-enc-lib/Encryption.js'
+import {Decryption} from 'dec-enc-lib/Decryption.js'
+
+const text = 'Hello there!';
+const encrypted = Encryption(text);
+console.log('encrypted: ', encrypted);
+const decrypted = Decryption(encrypted);
+console.log('decrypted: ', decrypted);
+```
+
+### Decryption and Encryption object
+
+
+#### Example
+
+
+```javascript
+// For object
+import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectAlgorathem.js'
+
+const object = { name :'manar' , age : 34 , children :['jory','horeya','shams']};
+const encrypted = objectEncryption(object);
+console.log('encrypted: ', encrypted);
+const decrypted = objectDecryption(encrypted);
+console.log('decrypted: ', decrypted);
+```
+
+###  Extra Decryption and Encryption for string with password
+
+
+#### Example
+
+
+```javascript
+// With password
+import {ExtraEncryption,ExtraDecryption} from 'dec-enc-lib/PassEncDec.js'
+
+const message = ' my name is Manar Alibrahim';
+const password = 'key88';
+const encrypted = ExtraEncryption(message,password);
+console.log('encrypted: ', encrypted);
+const decrypted = ExtreDecryption(encrypted, password);
+console.log('decrypted: ', decrypted);
+```
 ## Beskrivning av min kod
 Beskriv din kod på en hög abstraktionsnivå. En kort beskrivning av dina viktigaste klasser och metoder. Skapa gärna ett klassdiagram som bild. Använd det ni lärt er så här långt i 1dv607. Kommunicera så att jag kan förstå.
 Beskriv hur du kommit fram till om din kod fungerar.
@@ -51,11 +105,24 @@ denna modul har två functioner
 
 ### Testfall
 Lista de enskilda testfallen. **Fetmarkera** sådant som du själv fyllt i. En rad per testfall. Om ni använder vertyg för testning kan ni ha en bild här med testrapporten. Tänk på att kommunicera till mig. Vad fungerar?, vad fungerar inte? Hur är det testat? Vilka delar testas inte?
+#### automatiska enhetstester
+##### Testing
 
-| Vad testas      | input | output | utfall PASS/FAIL |
+```shell
+npm test
+```
+| Vad testas      | input | output | utfall PASS/FAIL | 
 | --------- | --------- | ------ | ------- |
-|           |           |        |         |
-
+|      Encryption/Decryption function      | input = ('')or(undefined)or(notstring)or(null)  )  |  Error       |    pass     |
+|     ExtraEncryption/ ExtraDecryption function      |  input(message or password) = ('')or(undefined)or(notstring)or(null)  )   |  Error       |    pass     |
+|      objectEncryption    | input = not object  |  Error  (invaild argumrnt )     |    pass     |
+|      objectEncryption    | input = ('')or(undefined)or(notstring)or(null)  )  |  Error  (invaild argumrnt )     |    pass     |
+#### test-app
+| Vad testas      | input | output | utfall PASS/FAIL | image|
+| --------- | --------- | ------ | ------- |-----|
+|     skriv in text koda och avkoda den     | "My name is manar"  |  My name is manr        |    pass     |![testFall1](image/testFall1.PNG "testfall1")|
+|    skriv in text och password koda och avkoda den      |  message = 'hello' , password =' key'   | hello     |    pass     |![testFall2](image/testFall2.PNG "testfall2")|
+|      skriv in object koda och avkoda den    | { name : 'manar' , age : 34 , children : ['jory','horeya','shams']}  |   { name : 'manar' , age : 34 , children : ['jory','horeya','shams']}    |    pass     | ![testFall3](image/testFall3.PNG "testfall3")|
 
 ## Kodkvalitetskrav
 

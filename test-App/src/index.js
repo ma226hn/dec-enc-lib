@@ -13,9 +13,11 @@ const testObject = {
     children : ['jory','horeya','shams']
 }
 
-console.log(' the obgect : ', testObject)
+console.log(' the object :   ', testObject)
  encryptionStr= objectEncryption(testObject)
- console.log(encryptionStr)
+ console.log('encrypted text ___________________')
+ console.log(encryptionStr ,)
+ console.log('decrypted text ___________________')
  console.log(objectDecryption(encryptionStr))
 
     const rl = readline.createInterface({
