@@ -92,10 +92,10 @@ Beskriv hur du kommit fram till om din kod fungerar.
 Denna modul tar en krypterad text som ett argument och ändrar karaktärer till ursprungliga karaktärer enligt ersättningsmatrisen och unicode table
 #### PassEncDec
 denna modul har två functioner 
-- ExtraEncryption: Den tar text som ett argument och använder Encception-modulen för att ändra karaktärer till andra karaktärerenligt ersättningsmatrisen och Unicode-tabellen. Lägg till extra slumpmässiga karaktärer enligt lösenord
+- ExtraEncryption: Den tar text som ett argument och använder Encreption-modulen för att ändra karaktärer till andra karaktärerenligt ersättningsmatrisen och Unicode-tabellen. Lägg till extra slumpmässiga karaktärer enligt lösenord
 - ExtraDecryption : Denna modul tar en krypterad text som ett argument och tar bort alla slumpmässiga tecken enligt lösenordet och ändrar sedan karaktärer till de ursprungliga karaktärer genom avkodaren
 
-#### ObjectAlgorathem 
+#### ObjectEncDec
 denna modul har två functioner 
 - ObjectEncryption: Denna enhet tar (objekt) som ett argument och använder (json .stringfy) för att konvertera det till text och använder sedan (Encryption -module) för att hämta krypterad text.
 - objectDecryption :Denna enhet tar (krypterad text ) som ett argument och använder (decryption -module) för att hämta ursprungliga karaktärer och använder sedan (Json.parse) för ätt konvertera det till (object).
@@ -113,16 +113,15 @@ npm test
 ```
 | Vad testas      | input | output | utfall PASS/FAIL | 
 | --------- | --------- | ------ | ------- |
-|      Encryption/Decryption function      | input = ('')or(undefined)or(notstring)or(null)  )  |  Error       |    pass     |
-|     ExtraEncryption/ ExtraDecryption function      |  input(message or password) = ('')or(undefined)or(notstring)or(null)  )   |  Error       |    pass     |
-|      objectEncryption    | input = not object  |  Error  (invaild argumrnt )     |    pass     |
-|      objectEncryption    | input = ('')or(undefined)or(notstring)or(null)  )  |  Error  (invaild argumrnt )     |    pass     |
+|      (Encryption/Decryption function)  error when insert invaild value for the message     | input = ('')or(undefined)or(notstring)or(null)  )  |  Error       |    pass     |
+|    ( ExtraEncryption/ ExtraDecryption function )error when insert invaild value for the message or the password    |  input(message or password) = ('')or(undefined)or(notstring)or(null)  )   |  Error       |    pass     |
+|     ( objectEncryption )  error when insert value not of type object | input = not object  |  Error  (invaild argumrnt )     |    pass     |
+|      (objectDecryption) error when insert invaild value for the message     | input = ('')or(undefined)or(notstring)or(null)  )  |  Error  (invaild argumrnt )     |    pass     |
 #### test-app
 | Vad testas      | input | output | utfall PASS/FAIL | image|
 | --------- | --------- | ------ | ------- |-----|
 |     skriv in text koda och avkoda den     | "My name is manar"  |  My name is manr        |    pass     |![testFall1](image/testFall1.PNG "testfall1")|
-|    skriv in text och password koda och avkoda den      |  message = 'hello' , password =' key'   | hello     |    pass     |
-![testFall2](image/testfall2.PNG "testfall2")|
+|    skriv in text och password koda och avkoda den      |  message = 'hello' , password =' key'   | hello     |    pass     |![testFall2](image/testfall2.PNG "testfall2")|
 |      skriv in object koda och avkoda den    | { name : 'manar' , age : 34 , children : ['jory','horeya','shams']}  |   { name : 'manar' , age : 34 , children : ['jory','horeya','shams']}    |    pass     | ![testFall3](image/testFall3.PNG "testfall3")|
 
 ## Kodkvalitetskrav
@@ -146,8 +145,8 @@ npm test
 | Metodnamn och förklaring  | Reflektion                                   |
 | -------------------  | ---------------------------------------------|
 |       shuffelMatrix /Encryption module              |       **small**  10 line code  -- **mondic function** there is just one argument -- **Do one thing** it shuffle the array  - **have no side effect** becuse it shffle the copy of the orginal array- but it dose not follow the rule **Do not repeat your self** because i write it  in decryption  module and in Encryption module |                                        |
-|converToHex /encryption module  | ** use descriptive names** - **mondic function** -- **do one thing** |
-| countStringValue / used in encryption and passEncDec module  | it dose not follow the rule **Do not repeat your self** because i write it  in Encryption  module and in passEncDec module -   ** small**  8 line code  |
+|converToHex /encryption module  | follow the rules **use descriptive names** - **mondic function** -- **do one thing** |
+| countStringValue / used in encryption and passEncDec module  | it dose not follow the rule **Do not repeat your self** because i write it  in Encryption  module and in passEncDec module -   **small**  8 line code  |
 | Decryption  function in Decryption module |  **mondic function** there is just one argument  - **prefer Exptions to returning Error code** |
 | Encryption function in Encryption module | **mondic function** there is just one argument  - **prefer Exptions to returning Error code** - **use descriptive names** |
 |divideMessage /in Decryption module  |  **mondic function** - **use descriptive names** - **do one thing** it divide the message | 
@@ -159,7 +158,7 @@ Reflektera över uppgiften utifrån ett kodkvalitetsperspektiv. Använd begrepp 
 Problemet är att alla modulerna gör samma sak. De krypterar och dekrypterar texten eller objektet, så det var svårt att hitta namnet med en meningsfull skillnad. Jag använde  variabelnamnen som är (Pronuncable) (message, password, index, Encrption, decryption).
 Alla funktioner i projektet (small) och de flesta av dem (Monadic), förutom krypteringsfunktioner med lösenord de är (Dyadic) och detta överensstämmer med principen (Reducing the number of arguments) .
 Problemet är att det finns några vanliga funktioner mellan moduler(countStringValue -shuffelMatrix) som jag har skrivit två gonger  , och detta  motsatta principen (do not repeate your  self). Jag borde ha  lagt dem i en separat module , men jag gjorde ett misstag och upprepade dem . Jag kommer att modifiera projektet i framtiden och fixa det.
-Objektkodning behöver mer testning, men andra funktioner är väl testade. Jag testade det på (arabiska - engelska - slumpmässiga tecken) och det fungerar bra. 
-- men med arabiska tecken är result felaktigt skriven men när jag testade den i webbläsarkonsolen fungerade det bra  . jag tror att problemet i vs console
-![test](image/bug1.PNG "arbiska bokstaver")
+(Objekt encryption) behöver mer testning, men andra funktioner är väl testade. Jag testade dem  på (arabiska - engelska - slumpmässiga tecken) och det fungerar bra. 
+- men med arabiska tecken är result felaktigt skriven( Samma bokstäver men separata och inte sammankopplade)   . jag tror att problemet i vs console
+![test](image/bug22.PNG "arbiska bokstaver")
 ![test](image/bug2.PNG "arbiska bokstaver")

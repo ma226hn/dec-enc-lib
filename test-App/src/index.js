@@ -1,7 +1,7 @@
 import { Encryption} from 'dec-enc-lib/Encryption.js'
 import {Decryption} from 'dec-enc-lib/Decryption.js'
 import {ExtraEncryption,ExtraDecryption} from 'dec-enc-lib/PassEncDec.js'
- import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectEncDec.js'
+// import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectEncDec.js'
 
  import readline from 'readline'
  var message =' منار'
@@ -14,19 +14,19 @@ import {ExtraEncryption,ExtraDecryption} from 'dec-enc-lib/PassEncDec.js'
              console.log(Decryption(message),'    :    the message efter decryption')
              console.log('')
 
- let encryptionStr =''
-const testObject = {
-    name :'manar',
-    age :34,
-    children : ['jory','horeya','shams']
-}
+//  let encryptionStr =''
+// const testObject = {
+//     name :'manar',
+//     age :34,
+//     children : ['jory','horeya','shams']
+// }
 
-console.log(' the object :   ', testObject)
- encryptionStr= objectEncryption(testObject)
- console.log('encrypted text ___________________')
- console.log(encryptionStr ,)
- console.log('decrypted text ___________________')
- console.log(objectDecryption(encryptionStr))
+// console.log(' the object :   ', testObject)
+//  encryptionStr= objectEncryption(testObject)
+//  console.log('encrypted text ___________________')
+//  console.log(encryptionStr ,)
+//  console.log('decrypted text ___________________')
+//  console.log(objectDecryption(encryptionStr))
 
     const rLine = readline.createInterface({
         input: process.stdin,
