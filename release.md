@@ -56,7 +56,7 @@ console.log('decrypted: ', decrypted);
 
 ```javascript
 // For object
-import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectAlgorathem.js'
+import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectEncDec.js'
 
 const object = { name :'manar' , age : 34 , children :['jory','horeya','shams']};
 const encrypted = objectEncryption(object);
@@ -121,7 +121,8 @@ npm test
 | Vad testas      | input | output | utfall PASS/FAIL | image|
 | --------- | --------- | ------ | ------- |-----|
 |     skriv in text koda och avkoda den     | "My name is manar"  |  My name is manr        |    pass     |![testFall1](image/testFall1.PNG "testfall1")|
-|    skriv in text och password koda och avkoda den      |  message = 'hello' , password =' key'   | hello     |    pass     |![testFall2](image/testFall2.PNG "testfall2")|
+|    skriv in text och password koda och avkoda den      |  message = 'hello' , password =' key'   | hello     |    pass     |
+![testFall2](image/testfall2.PNG "testfall2")|
 |      skriv in object koda och avkoda den    | { name : 'manar' , age : 34 , children : ['jory','horeya','shams']}  |   { name : 'manar' , age : 34 , children : ['jory','horeya','shams']}    |    pass     | ![testFall3](image/testFall3.PNG "testfall3")|
 
 ## Kodkvalitetskrav
@@ -134,7 +135,7 @@ npm test
 | -------------------  | ---------------------------------------------|
 |          **Decryption** - **Encryption**      the name of the modules        |  they are perfect  **class name should have a noun or noun phrase names**  - **use Intention revealing names** |
 | **passEncDec** |The name is not the best and does not match the rule **use pronounceable names**|
-| **objectAlgorathem **  | I made a mistake when I chose this name because it doesn't follow the rules **Use intention revealing names**|
+| **objectEncDec**   | I made a mistake when I chose this name because it doesn't follow the rules **Use intention revealing names**|
 |**mixmessage** the name of method in encryption module | Name is appropriate and  it follow the rules **use Intention revealing names** - **method name should have a verb or verb phrase names**  |
 |**CodingMatrix** the name of the array which used to replace the characters in the message | the name follow the rules **Avoid disinformaion names** - **add meaningful context** | 
 |**shuffelMatrix**  function  used in decryption and encryption modules | the name follow the rules **use Intention revealing names** - **method name should have a verb or verb phrase names** 
@@ -154,3 +155,11 @@ npm test
 Reflektera över uppgiften utifrån ett kodkvalitetsperspektiv. Använd begrepp ifrån boken. 
 
 
+- Det var en nyttig uppgift eftersom vi måste vara försiktiga med variabelnamn och funktionslängd. Jag har bytt namn på modulerna flera gånger och försökt hitta meningsfulla namn.
+Problemet är att alla modulerna gör samma sak. De krypterar och dekrypterar texten eller objektet, så det var svårt att hitta namnet med en meningsfull skillnad. Jag använde  variabelnamnen som är (Pronuncable) (message, password, index, Encrption, decryption).
+Alla funktioner i projektet (small) och de flesta av dem (Monadic), förutom krypteringsfunktioner med lösenord de är (Dyadic) och detta överensstämmer med principen (Reducing the number of arguments) .
+Problemet är att det finns några vanliga funktioner mellan moduler(countStringValue -shuffelMatrix) som jag har skrivit två gonger  , och detta  motsatta principen (do not repeate your  self). Jag borde ha  lagt dem i en separat module , men jag gjorde ett misstag och upprepade dem . Jag kommer att modifiera projektet i framtiden och fixa det.
+Objektkodning behöver mer testning, men andra funktioner är väl testade. Jag testade det på (arabiska - engelska - slumpmässiga tecken) och det fungerar bra. 
+- men med arabiska tecken är result felaktigt skriven men när jag testade den i webbläsarkonsolen fungerade det bra  . jag tror att problemet i vs console
+![test](image/bug1.PNG "arbiska bokstaver")
+![test](image/bug2.PNG "arbiska bokstaver")

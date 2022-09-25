@@ -4,13 +4,13 @@ import { Decryption } from "../Decryption.js"
 import { Encryption } from "../Encryption.js"
 import { ExtraEncryption,ExtraDecryption } from "../PassEncDec.js"
 
-import { objectDecryption, objectEncryption } from "../ObjectAlgorathem.js"
+import { objectDecryption, objectEncryption } from "../ObjectEncDec.js"
 
 const ERROR_MESSAGE_NOT_OBJECT= ' the inserted value is not object'
 const ERROR_NOT_VALID_ARGUMENT ='not valid argument'
 
 /**
- * Tests the argument (exceptions and side effects).
+ * Tests the argument (exceptions ).
  *
  */
 const testArgument = (func) => {

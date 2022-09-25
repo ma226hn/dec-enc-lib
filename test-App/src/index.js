@@ -1,12 +1,20 @@
 import { Encryption} from 'dec-enc-lib/Encryption.js'
 import {Decryption} from 'dec-enc-lib/Decryption.js'
 import {ExtraEncryption,ExtraDecryption} from 'dec-enc-lib/PassEncDec.js'
-import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectAlgorathem.js'
+ import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectEncDec.js'
 
-import readline from 'readline'
-var message =''
-var password =''
-let encryptionStr =''
+ import readline from 'readline'
+ var message =' منار'
+ var password =''
+ 
+ console.log('__________________________________ String Encryption')
+ console.log(message, ' the message ')
+               message = Encryption(message)
+             console.log(message , '     ( the message efter encryption)')
+             console.log(Decryption(message),'    :    the message efter decryption')
+             console.log('')
+
+ let encryptionStr =''
 const testObject = {
     name :'manar',
     age :34,

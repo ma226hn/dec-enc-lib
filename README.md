@@ -55,7 +55,7 @@ console.log('decrypted: ', decrypted);
 
 ```javascript
 // For object
-import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectAlgorathem.js'
+import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectEncDec.js'
 
 const object = { name :'manar' , age : 34 , children :['jory','horeya','shams']};
 const encrypted = objectEncryption(object);
@@ -81,3 +81,7 @@ console.log('encrypted: ', encrypted);
 const decrypted = ExtreDecryption(encrypted, password);
 console.log('decrypted: ', decrypted);
 ```
+
+
+## Keywords
+ Decryption- Encryption  - password - object
