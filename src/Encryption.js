@@ -1,4 +1,4 @@
-import { shuffelArray, replacementArray } from './ReplecementArray.js'
+import { shuffleArray, replacementArray } from './ReplacementArray.js'
 
 
 export function Encrypt (message) {
@@ -8,11 +8,11 @@ export function Encrypt (message) {
   }
   message = message.replaceAll(' ', '//').split('')
   const messageCharsValue = countMessageCharsValue(message)
-  const hexValues = converToHex(message) // convert to hex value
+  const hexValues = convertToHex(message) // convert to hex value
 
-  let hexString = replaceHexValu(hexValues, replacementArrayCopy, messageCharsValue)
+  let hexString = replaceHexValue(hexValues, replacementArrayCopy, messageCharsValue)
   hexString += replacementArray[messageCharsValue % 175] // add the message value to the message
-  const encryptedMessage = mixmessage(hexString)
+  const encryptedMessage = mixMessage(hexString)
 
   return (encryptedMessage)
 }
@@ -28,7 +28,7 @@ function countMessageCharsValue (message) {
 
 
 
-function converToHex (message) {
+function convertToHex (message) {
   const hexArray = message.map((char) => {
     return char.charCodeAt(0).toString(16).padStart(4, '0')
   })
@@ -37,14 +37,14 @@ function converToHex (message) {
 }
 
 
-// replace each elemnt in hex form with a elment in codingmatrix according to its nummber i uncode table.
-function replaceHexValu (hexArray, matrix, messageValue) {
-  messageValue = messageValue % 175 // shuffle matrix array according to the message char's   nummbers in the unicode table.
+
+function replaceHexValue (hexArray, matrix, messageValue) {
+  messageValue = messageValue % 175 // shuffle matrix array according to the message char's   numbers in the unicode table.
   const encryptedMessageArray = hexArray.map(str => {
     let NewValue = ''
     str = str.split('')
     str = str.forEach((char) => {
-      shuffelArray(matrix, messageValue)
+      shuffleArray(matrix, messageValue)
 
       NewValue += matrix[char.charCodeAt(0)]
     })
@@ -54,7 +54,7 @@ function replaceHexValu (hexArray, matrix, messageValue) {
 }
 
 
-function mixmessage (message) {
+function mixMessage (message) {
   let i = 0
   let str1 = ''
   let str2 = ''

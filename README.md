@@ -37,14 +37,14 @@ MIT
 
 ```javascript
 // For string
-import { Encryption} from 'dec-enc-lib/Encryption.js'
-import {Decryption} from 'dec-enc-lib/Decryption.js'
+import { Encrypt} from 'dec-enc-lib/src/Encryption.js'
+import {Decrypt} from 'dec-enc-lib/src/Decryption.js'
 
 const text = 'Hello there!';
-const encrypted = Encryption(text);
+const encryptedMessage = Encrypt(text);
 console.log('encrypted: ', encrypted);
-const decrypted = Decryption(encrypted);
-console.log('decrypted: ', decrypted);
+const decryptedMessage = Decrypt(encryptedMessage);
+console.log('decrypted: ', decryptedMessage);
 ```
 
 ### Decryption and Encryption object
@@ -55,12 +55,12 @@ console.log('decrypted: ', decrypted);
 
 ```javascript
 // For object
-import {objectEncryption,objectDecryption} from 'dec-enc-lib/ObjectEncDec.js'
+import {EncryptObj,DecryptObj} from 'dec-enc-lib/src/ObjectEncDec.js'
 
 const object = { name :'manar' , age : 34 , children :['jory','horeya','shams']};
-const encrypted = objectEncryption(object);
+const encrypted = EncryptObj(object);
 console.log('encrypted: ', encrypted);
-const decrypted = objectDecryption(encrypted);
+const decrypted = DecryptObj(encrypted);
 console.log('decrypted: ', decrypted);
 ```
 
@@ -72,13 +72,13 @@ console.log('decrypted: ', decrypted);
 
 ```javascript
 // With password
-import {ExtraEncryption,ExtraDecryption} from 'dec-enc-lib/PassEncDec.js'
+import {EncryptWithPass,DecryptWithPass} from 'dec-enc-lib/src/PassEncDec.js'
 
 const message = ' my name is Manar Alibrahim';
 const password = 'key88';
-const encrypted = ExtraEncryption(message,password);
+const encrypted = EncryptWithPass(message,password);
 console.log('encrypted: ', encrypted);
-const decrypted = ExtreDecryption(encrypted, password);
+const decrypted = DecryptWithPass(encrypted, password);
 console.log('decrypted: ', decrypted);
 ```
 

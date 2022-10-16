@@ -7,7 +7,7 @@ export const replacementArray = codingStr.split('-') // convert string to array 
 
 
 
-export function shuffelArray (matrix, mValue) {
+export function shuffleArray (matrix, mValue) {
   let buffer = ''
   const shuffleCounter = mValue % 10
 

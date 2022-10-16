@@ -1,9 +1,10 @@
 {
   "name": "dec-enc-lib",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description": "",
   "type": "module",
   "main": "src/index",
+  "typings": "dist index.d.ts",
   "scripts": {
     "start": "node src/index.js",
     "test": "npx --node-options=--experimental-vm-modules jest || exit 0",
