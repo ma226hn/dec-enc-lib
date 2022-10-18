@@ -2,15 +2,6 @@ import { Decrypt } from './Decryption.js'
 import { Encrypt } from './Encryption.js'
 
 
-function countStringValue (message) {
-  let sum = 0
-  message.forEach(element => {
-    sum += element.charCodeAt(0)
-  })
-  return sum
-}
-
-
 export function EncryptWithPass (message, password) {
   if ((!message) || (!password) || (typeof message !== 'string') || (typeof password !== 'string')) {
     throw new TypeError('not valid argument')
@@ -31,6 +22,15 @@ export function EncryptWithPass (message, password) {
     encryptedMessageWithPass += Math.random().toString(16).substr(2, 8)
   }
   return encryptedMessageWithPass
+}
+
+
+function countStringValue (message) {
+  let sum = 0
+  message.forEach(element => {
+    sum += element.charCodeAt(0)
+  })
+  return sum
 }
 
 

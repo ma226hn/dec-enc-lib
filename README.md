@@ -26,7 +26,7 @@ npm test
 
 This library developed and tested primary for Node.js
 
-## licens
+## license
 MIT
 ## Usage
 

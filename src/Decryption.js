@@ -5,17 +5,12 @@ export function Decrypt (message) {
   if ((!message) || (typeof message !== 'string')) { throw new TypeError('not valid argument') }
 
   const rearrangedMessage = rearrangeMessageChar(message)
-
   const arrayFromMessageChar = rearrangedMessage.split('')
-
   const arrayOfString = convertMessageToArrayOfString(arrayFromMessageChar)
-
   const valueOfLastElement = replacementArray.findIndex(element => element === arrayOfString[arrayOfString.length - 1])
   arrayOfString.pop()// delete the last element (this element is the value oh the message and not a char in the message)
   const sumValueOfAllCharsInMessage = valueOfLastElement
-
   const replacementValueArray = findReplacementValue(arrayOfString, sumValueOfAllCharsInMessage, replacementArrayCopy)
-
   const arrayOfChars = findCharCorrespondingDecimalValue(replacementValueArray)
 
   let messageText = (arrayOfChars.join(''))
@@ -36,6 +31,7 @@ function rearrangeMessageChar (message) {
   }
   return rearrangedMessage
 }
+
 
 
 function convertMessageToArrayOfString (message) {
